@@ -1,5 +1,7 @@
 # go-gin-websocket-example
 
+Example of implementing WebSocket using Go + Gin
+
 ## Developement Environment
 
 * macOS Sonoma 14.1.1 (23B81)
