@@ -2,6 +2,7 @@ package websocket
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -23,7 +24,7 @@ func WebSocketHandler(c *gin.Context) {
 
 	ws, err := upGrader.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
-		panic(err)
+		log.Fatalf("Error upgrading connection: %v", err)
 	}
 
 	defer func() {
@@ -36,15 +37,15 @@ func WebSocketHandler(c *gin.Context) {
 	for {
 		msgType, msg, err := ws.ReadMessage()
 		if err != nil {
-			panic(err)
+			log.Fatalf("Error reading message: %v", err)
 		}
 
-		fmt.Printf("Message Type: %d, Message: %s\n", msgType, string(msg))
+		fmt.Printf("Message Type: %d\n, Message: %s\n", msgType, string(msg))
 		err = ws.WriteJSON(WebSocketMessage{
-			Message: "Received: " + string(msg),
+			Message: "Success",
 		})
 		if err != nil {
-			panic(err)
+			log.Fatalf("Error writing message: %v", err)
 		}
 	}
 }
