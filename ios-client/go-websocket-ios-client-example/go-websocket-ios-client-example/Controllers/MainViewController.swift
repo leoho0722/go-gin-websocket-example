@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
     
     
     // MARK: - IBAction
- 
+    
     @IBAction func btnSendClick(_ sender: UIButton) {
         do {
             if WebSocketManager.shared.isConnect {
@@ -80,16 +80,22 @@ class MainViewController: UIViewController {
                     }
                     let message = WebSocketMessage(data: txt)
                     try await WebSocketManager.shared.send(data: message)
+                    Alert.showAlertWith(vc: self, config: .confirmNcancel(title: "Send",
+                                                                          message: "Success",
+                                                                          confirmTitle: "Confirm",
+                                                                          cancelTitle: "Cancel"))
                 }
             } else {
-                let config = WebSocketManager.WebSocketConnectionConfig(scheme: .ws,
-                                                                        host: "192.168.1.101",
-                                                                        port: 8080,
-                                                                        path: "/ws")
+                let config = WebSocketConnectionConfig(scheme: .ws,
+                                                       host: "192.168.23.56",
+                                                       port: 8080,
+                                                       path: "/ws")
                 try WebSocketManager.shared.connect(config: config)
             }
         } catch {
-            print(error)
+            Alert.showAlertWith(vc: self, config: .confirm(title: "Error",
+                                                           message: error.localizedDescription,
+                                                           confirmTitle: "Confirm"))
         }
     }
     
@@ -104,7 +110,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: WebSocketManagerDelegate {
     
-    func websocket(_ manager: WebSocketManager, connectState state: WebSocketManager.WebSocketConnectState) {
+    func websocket(_ manager: WebSocketManager, connectState state: WebSocketConnectState) {
         switch state {
         case .connect:
             setupButton(isConnect: true)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D079D4982B07850900ED9CBC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D079D4972B07850900ED9CBC /* Alert.swift */; };
 		D09B00852B0664B300E8A0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B00842B0664B300E8A0E1 /* AppDelegate.swift */; };
 		D09B00872B0664B300E8A0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B00862B0664B300E8A0E1 /* SceneDelegate.swift */; };
 		D09B008E2B0664B500E8A0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09B008D2B0664B500E8A0E1 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D079D4972B07850900ED9CBC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D09B00812B0664B300E8A0E1 /* go-websocket-ios-client-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "go-websocket-ios-client-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09B00842B0664B300E8A0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D09B00862B0664B300E8A0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D079D4962B0784C700ED9CBC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D079D4972B07850900ED9CBC /* Alert.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D09B00782B0664B300E8A0E1 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 				D09B00862B0664B300E8A0E1 /* SceneDelegate.swift */,
 				D09B008F2B0664B500E8A0E1 /* LaunchScreen.storyboard */,
 				D09B00922B0664B500E8A0E1 /* Info.plist */,
+				D079D4962B0784C700ED9CBC /* Utilities */,
 				D09B00A02B066AA500E8A0E1 /* Managers */,
 				D09B009B2B06651A00E8A0E1 /* Models */,
 				D09B009A2B06651400E8A0E1 /* Views */,
@@ -192,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D079D4982B07850900ED9CBC /* Alert.swift in Sources */,
 				D09B009E2B06653200E8A0E1 /* MainViewController.swift in Sources */,
 				D09B00852B0664B300E8A0E1 /* AppDelegate.swift in Sources */,
 				D09B00872B0664B300E8A0E1 /* SceneDelegate.swift in Sources */,
