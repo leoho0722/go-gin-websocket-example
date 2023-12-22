@@ -14,7 +14,7 @@ const (
 
 func SetupRoute() {
 	route := gin.Default()
-	route.GET(string(WebSocket), websocket.WebSocketHandler)
+	route.GET(string(WebSocket), websocket.Handler)
 
 	ip := network.GetIP()
 	err := route.Run(ip + ":8080")

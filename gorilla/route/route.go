@@ -15,7 +15,7 @@ const (
 )
 
 func SetupRoute() {
-	http.HandleFunc(string(WebSocket), websocket.WebSocketHandler)
+	http.HandleFunc(string(WebSocket), websocket.Handler)
 
 	ip := network.GetIP()
 	err := http.ListenAndServe(ip+":8080", nil)

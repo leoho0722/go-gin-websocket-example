@@ -9,11 +9,11 @@ import (
 	websocket "github.com/gorilla/websocket"
 )
 
-type WebSocketMessage struct {
+type Message struct {
 	Message string `json:"message"`
 }
 
-func WebSocketHandler(c *gin.Context) {
+func Handler(c *gin.Context) {
 	upGrader := websocket.Upgrader{
 		CheckOrigin: func(r *http.Request) bool {
 			return true
@@ -41,7 +41,7 @@ func WebSocketHandler(c *gin.Context) {
 		}
 
 		fmt.Printf("Message Type: %d\n, Message: %s\n", msgType, string(msg))
-		err = ws.WriteJSON(WebSocketMessage{
+		err = ws.WriteJSON(Message{
 			Message: "Success",
 		})
 		if err != nil {

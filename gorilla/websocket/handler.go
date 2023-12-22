@@ -8,11 +8,11 @@ import (
 	websocket "github.com/gorilla/websocket"
 )
 
-type WebSocketMessage struct {
+type Message struct {
 	Message string `json:"message"`
 }
 
-func WebSocketHandler(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	upGrader := websocket.Upgrader{
 		CheckOrigin: func(r *http.Request) bool {
 			return true
@@ -40,7 +40,7 @@ func WebSocketHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		fmt.Printf("Received Message: %s\n", string(msg))
 
-		err = ws.WriteJSON(WebSocketMessage{
+		err = ws.WriteJSON(Message{
 			Message: "Received: " + string(msg),
 		})
 		if err != nil {
