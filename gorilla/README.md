@@ -2,7 +2,7 @@
 
 Example of implementing WebSocket using Go + Gorilla
 
-## Developement Environment
+## Development Environment
 
 * Apple MacBook Pro (13-inch, M1, 2020)
 * macOS Sonoma 14.2.1 (23B81)
