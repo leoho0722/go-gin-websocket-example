@@ -1,4 +1,4 @@
-# go-websocket-example
+# websocket-example
 
 Example of implementing WebSocket using Go
 
